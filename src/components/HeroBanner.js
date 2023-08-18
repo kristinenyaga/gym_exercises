@@ -1,12 +1,9 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Unstable_Grid2";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import video from '../assets/images/exercise.mp4'
 import finger from '../assets/images/hand-finger-pointing-down (1).png'
-import { Container} from "@mui/material";
 
 const HeroSection = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(8),
@@ -16,13 +13,6 @@ const HeroSection = styled("div")(({ theme }) => ({
   },
 }));
 
-const HeroImage = styled("img")(({ theme }) => ({
-  width: "100%",
-  height: "auto",
-  [theme.breakpoints.down("sm")]: {
-    marginBottom: theme.spacing(4),
-  },
-}));
 
 const HeroText = styled("div")(({ theme }) => ({
   marginRight: theme.spacing(4),
