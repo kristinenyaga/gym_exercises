@@ -36,28 +36,14 @@ const SearchExercises = ({bodyPart,setBodyPart,exercises,setExercises}) => {
   }
   return (
     <Stack p="20px" alignItems="center" mt="37px" justifyContent="center">
-      <Typography
-        fontWeight={700}
-        sx={{
-          fontSize: {
-            lg: "44px",
-            xs: "30px",
-          },
-          marginBottom: "50px",
-          textAlign: "center",
-        }}
-      >
-        Awesome Exercises <br />
-        You Should Know
-      </Typography>
-      <Box position="relative" mb="72px">
+      <Box position="relative"  mb="72px">
         <TextField
           sx={{
             input: {
               fontWeight: "700",
               border: "none",
               borderRadius: "2px",
-              color:'black'
+              color: "black",
             },
             width: {
               lg: "800px",
@@ -75,10 +61,10 @@ const SearchExercises = ({bodyPart,setBodyPart,exercises,setExercises}) => {
         <Button
           className="search-btn"
           sx={{
-            color: "#25AB75",
+            color: "#F86F03",
             border: 1,
-            borderLeft:'none',
-            borderColor:"#25AB75",
+            borderLeft: "none",
+            borderColor: "#F86F03",
             bgcolor: "black",
             textTransform: "uppercase",
             width: {
@@ -91,22 +77,28 @@ const SearchExercises = ({bodyPart,setBodyPart,exercises,setExercises}) => {
               xs: "14px",
             },
             height: "56px",
-            position: 'absolute',
-            right:0
+            position: "absolute",
+            right: 0,
+            marginLeft:'10px'
           }}
-
           onClick={handleSearch}
         >
           Search
         </Button>
       </Box>
-      <Box sx={{
-        padding: '20px',
-        position: 'relative',
-        width: '100%',
-      }}>
-        <HorizontalScrollBar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} isBodyParts />
-
+      <Box
+        sx={{
+          padding: "20px",
+          position: "relative",
+          width: "100%",
+        }}
+      >
+        <HorizontalScrollBar
+          data={bodyParts}
+          bodyPart={bodyPart}
+          setBodyPart={setBodyPart}
+          isBodyParts
+        />
       </Box>
     </Stack>
   );
