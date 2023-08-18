@@ -1,26 +1,29 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import Logo from "../assets/images/Logo-1.png";
+import Logo from "../assets/images/fitnesslogo.png";
 
 const Footer = () => (
-  <Box mt="80px" bgcolor="#FFF3F4">
+  <Box mt="80px" bgcolor="#fff">
     <Stack
-      gap="40px"
+      gap="20px"
       sx={{ alignItems: "center" }}
       flexWrap="wrap"
       px="40px"
       pt="24px"
     >
-      <img src={Logo} alt="logo" style={{ width: "200px", height: "41px" }} />
+      <img src={Logo} alt="logo" style={{ width: "100px", height: "100px" }} />
     </Stack>
     <Typography
       variant="h5"
       sx={{ fontSize: { lg: "28px", xs: "20px" } }}
-      mt="41px"
+      mt="15px"
       textAlign="center"
       pb="40px"
+      color="#F86F03"
     >
-      Made by Christine Nyaga
+      Made by Kristine Nyaga <br />
+      (254) 7-344-120-54 <br />
+      &copy;fitnessPro, 2023
     </Typography>
   </Box>
 );
