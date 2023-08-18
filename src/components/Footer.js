@@ -11,11 +11,11 @@ const Footer = () => (
       px="40px"
       pt="24px"
     >
-      <img src={Logo} alt="logo" style={{ width: "100px", height: "100px" }} />
+      <img src={Logo} alt="logo" style={{ width: "100px", height: "80px" }} />
     </Stack>
     <Typography
       variant="h5"
-      sx={{ fontSize: { lg: "28px", xs: "20px" } }}
+      sx={{ fontSize: { lg: "22px", xs: "20px" } }}
       mt="15px"
       textAlign="center"
       pb="40px"

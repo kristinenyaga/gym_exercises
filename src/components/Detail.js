@@ -48,17 +48,28 @@ const Detail = ({ exerciseDetail }) => {
         </Typography>
         {extraDetail.map((item) => (
           <Stack key={item.name} direction="row" gap="24px" alignItems="center">
-            <Button sx={{
-              background: "#fff2db",
-              borderRadius: '50%',
-              width: '100px',
-              height:'100px'
-            }}>
-              <img src={item.icon} alt="bodypart" style={{width:'50px',height:'50px'}} />
+            <Button
+              sx={{
+                background: "#F86F03",
+                borderRadius: "50%",
+                width: "100px",
+                height: "100px",
+              }}
+            >
+              <img
+                src={item.icon}
+                alt="bodypart"
+                style={{ width: "50px", height: "50px" }}
+              />
             </Button>
-            <Typography variant='h5' textTransform="c
-            " >{item.name}</Typography>
-            </Stack>
+            <Typography
+              variant="h5"
+              textTransform="c
+            "
+            >
+              {item.name}
+            </Typography>
+          </Stack>
         ))}
       </Stack>
     </Stack>

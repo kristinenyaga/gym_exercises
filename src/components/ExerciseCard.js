@@ -13,10 +13,10 @@ const ExerciseCard = ({exercise}) => {
         loading="lazy"
         alt="exercises"
       />
-      <Stack direction="row" sx={{ mt:'20px'}}>
+      <Stack direction="row" sx={{ mt: "20px" }}>
         <Button
           sx={{
-            color: "red",
+            color: "#F86F03",
             bgcolor: "white",
             fontSize: "14px",
             textTransform: "capitalize",
@@ -31,7 +31,7 @@ const ExerciseCard = ({exercise}) => {
         <Button
           sx={{
             color: "#fff",
-            bgcolor: "red",
+            bgcolor: "#F86F03",
             fontSize: "14px",
             textTransform: "capitalize",
             borderRadius: "20px",
@@ -42,15 +42,19 @@ const ExerciseCard = ({exercise}) => {
           {exercise.bodyPart}
         </Button>
       </Stack>
-      <Typography sx={{
-        ml: '21px',
-        color: '#fff',
-        fontWeight: 'bold',
-        textTransform: 'capitalize',
-        fontSize: '14px',
-        mt: '11px',
-        pb:'10px'
-      }}>{ exercise.name}</Typography>
+      <Typography
+        sx={{
+          ml: "21px",
+          color: "#fff",
+          fontWeight: "bold",
+          textTransform: "capitalize",
+          fontSize: "14px",
+          mt: "11px",
+          pb: "10px",
+        }}
+      >
+        {exercise.name}
+      </Typography>
     </Link>
   );
 }

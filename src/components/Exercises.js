@@ -75,7 +75,7 @@ const Exercises = ({ exercises, bodyPart, setExercises }) => {
           <ExerciseCard key={idx} exercise={exercise} />
         ))}
       </Stack>
-      <Stack mt="100px" alignItems="center" sx={{ backgroundColor: "#fff" }}>
+      <Stack mt="100px" alignItems="center" sx={{ backgroundColor: "#F86F03" }}>
         {exercises.length > 9 && (
           <Pagination
             color="secondary"

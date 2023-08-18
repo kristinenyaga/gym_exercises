@@ -11,7 +11,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { FitnessCenter, Menu } from "@mui/icons-material";
+import { Menu } from "@mui/icons-material";
 import logo from "../assets/images/weightlifting.png";
 
 const Navbar = () => {
