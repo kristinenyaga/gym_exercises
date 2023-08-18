@@ -4,151 +4,119 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Button, Typography } from "@mui/material";
-import BannerImage from '../assets/images/image 1 (2).png'
+import video from '../assets/images/exercise.mp4'
+import finger from '../assets/images/hand-finger-pointing-down (1).png'
+import { Container} from "@mui/material";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
+const HeroSection = styled("div")(({ theme }) => ({
+  paddingTop: theme.spacing(8),
+  paddingBottom: theme.spacing(8),
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
 }));
 
-const heroText = {
-  fontSize: '9rem',
-  fontWeight: 800,
-  zindex: 1000,
-  marginBottom: 0,
-  lineHeight:'10rem'
-}
+const HeroImage = styled("img")(({ theme }) => ({
+  width: "100%",
+  height: "auto",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: theme.spacing(4),
+  },
+}));
 
-const rightGrid = {
-  maxWidth: "140px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  border: 1,
-  borderColor: "#25AB75",
-  padding: ".3em 1.3em",
-  borderRadius: "4px",
-  marginTop:'15%'
-};
-const rightGridTop = {
-  color: "#25AB75",
-  fontWeight: "bold",
-  fontSize: "20px",
-};
+const HeroText = styled("div")(({ theme }) => ({
+  marginRight: theme.spacing(4),
+  [theme.breakpoints.down("sm")]: {
+    marginRight: 0,
+    marginBottom: theme.spacing(4),
+  },
+}));
+
 const HeroBanner = () => {
   return (
-    <Box sx={{ flexGrow: 1, marginTop: "5rem", position: "relative" }}>
-      <Grid container spacing={2}>
-        <Grid xs={4}>
-          <Grid container spacing={2} direction="column">
-            <Grid xs={6} md={8}>
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: "2px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    width: "50px",
-                    backgroundColor: "#25AB75",
-                    padding: ".3em 2.7em .3em .7em",
-                    borderRadius: "20px",
-                    fontWeight: 600,
-                  }}
-                >
-                  New
-                </Typography>
-                <Typography
-                  sx={{
-                    marginTop: "5px",
-                    fontWeight: 600,
-                  }}
-                >
-                  High intensity workout to burn calories
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid xs={6} md={6}>
-              <Typography sx={heroText}>Cardio</Typography>
-              <Typography sx={heroText}>Exercise</Typography>
-            </Grid>
-            <Grid xs={6} md={4}>
-              <Typography
-                sx={{
-                  fontWeight: 400,
-                  fontSize: "15px",
-                }}
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Typography>
-            </Grid>
-            <Grid xs={6} md={8}>
-              <Box>
-                <Button
-                  variant="contained"
-                  sx={{
-                    backgroundColor: "#25AB75",
-                    marginRight: "2em",
-                  }}
-                >
-                  Get Started
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    color: "#25AB75",
-                    borderColor: "#25AB75",
-                    fontWeight: "600",
-                  }}
-                >
-                  Preview
-                </Button>
-              </Box>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid
-          xs={4}
-          sx={{
-            zIndex: -1,
-            marginTop: "-7%",
-            // marginLeft: "-8%",
+    <>
+      <Box
+        component="div"
+        position="relative"
+        width="100%" // Full viewport width
+        height="50vh" // Full viewport height
+        overflow="hidden" // Hide any overflow
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover", // Maintain aspect ratio and cover the container
+            zIndex: -1, // Put the video behind other content
           }}
         >
-          <img sx={{}} alt="The house from the offer." src={`${BannerImage}`} />
-        </Grid>
-        <Grid xs={4}>
-          <Grid container spacing={1} direction="column">
-            <Grid xs={4}>
-              <Box
-                sx={rightGrid}
-              >
-                <Typography
-                  sx={rightGridTop}
-                >
-                  38:14
-                </Typography>
-                <Typography sx={{ color: "white",fontWeight:'bold' }}>time</Typography>
-              </Box>
-            </Grid>
-            <Grid xs={4}>
-              <Box sx={rightGrid}>
-                <Typography sx={rightGridTop}>
-                  165
-                </Typography>
-                <Typography>est calories</Typography>
-              </Box>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Box>
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.4)", // Add an overlay with 50% opacity
+            zIndex: 0, // Put the overlay behind other content
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width:'80%',
+              transform: "translate(-50%, -60%)",
+              zIndex: 1, // Put the text above the video and overlay
+              textAlign: "center",
+              color: "white", // Text color
+            }}
+          >
+            <Typography
+              variant="h1"
+              sx={{
+                width:'100%',
+                fontSize: {
+                  xs: "45px",
+                  md: "40px",
+                  lg: "60px",
+                },
+              }}
+            >
+              #Healthy body healthy mind
+            </Typography>
+          </div>
+        </div>
+      </Box>
+      <HeroSection>
+        <HeroText>
+          <Typography
+            variant="h2"
+            sx={{
+              textAlign: "center",
+              color: "#F86F03",
+              fontSize: {
+                xs:'44px'
+              }
+            }}
+            gutterBottom
+          >
+            Start your fitness journey today
+          </Typography>
+          <Typography sx={{ textAlign: "center",fontSize:'20px'}} variant="body1">
+            You can find exercises you can do at home or in the gym<img  alt="finger pointing down" src={finger } />
+          </Typography>
+        </HeroText>
+      </HeroSection>
+    </>
   );
 };
 
