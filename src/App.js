@@ -10,7 +10,7 @@ import { Box } from '@mui/material'
 const App = () => {
   return (
     <>
-      <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
+      <Box  sx={{ width: { xl: "1688px" } }} m="auto" padding='0'>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
