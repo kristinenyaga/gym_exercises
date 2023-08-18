@@ -1,70 +1,133 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Stack } from '@mui/material'
-import logo from '../assets/images/Logo.png'
-import { Box, Typography } from "@mui/material";
-import { FitnessCenter } from '@mui/icons-material';
-const navbarLinks = {
-  fontSize: "1em",
-  fontFamily: 'Poppins',
-  letterSpacing: "0.03rem",
-  fontWeight: 'lighter',
-  lineHeight: "50px",
-};
-const navbar_logo = {
-  fontSize: "2em",
-  fontFamily: "fantasy",
-  letterSpacing: "0.03rem",
-  fontWeight: "bold",
-};
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
+import { FitnessCenter, Menu } from "@mui/icons-material";
+import logo from "../assets/images/weightlifting.png";
+
 const Navbar = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
+  const navbarLinks = {
+    fontSize: "1.2em",
+    letterSpacing: "0.03rem",
+    fontWeight: "400",
+    lineHeight: "50px",
+    cursor: "pointer",
+    color: '#fff',
+    fontFamily: 'inherit',
+  };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
-      <Box
+    <AppBar position="static" sx={{
+      backgroundColor: 'transparent',
+    }
+    }>
+      <Toolbar
         sx={{
           display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        <FitnessCenter
+        <Box
           sx={{
-            marginTop: "10px",
-            fontSize: "2em",
-            color: "#25AB75",
-          }}
-        />
-        <Typography variant="h3" sx={navbar_logo}>
-          Gym
-        </Typography>
-        <Typography
-          sx={{
-            color: "#25AB75",
-            fontSize: "2.2em",
-            fontFamily: "fantasy",
-            letterSpacing: "0.03rem",
-            fontWeight: "bold",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5em",
           }}
         >
-          Pro
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          gap: "2em",
-        }}
-      >
-        <Typography sx={navbarLinks}>Home</Typography>
-        <Typography sx={navbarLinks}>Tips&Tricks</Typography>
-        <Typography sx={navbarLinks}>Exercises</Typography>
-        <Typography sx={navbarLinks}>Feedback</Typography>
-      </Box>
-    </Box>
-  );
-}
+          <img
+            src={logo}
+            alt="logo"
+            style={{ width: "50px", height: "50px", objectFit: "cover" }}
+          ></img>
+          <Typography variant="h3" sx={logo}>
+            Gym
+          </Typography>
+          <Typography
+            sx={{
+              color: "#F86F03",
+              fontSize: "2.2em",
+              letterSpacing: "0.03rem",
+              fontWeight: "bold",
+              fontFamily:'inherit'
+            }}
+          >
+            Pro
+          </Typography>
+        </Box>
 
-export default Navbar
+        {/* Links on Larger Screens */}
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" }, // Hide on small screens, show on medium and larger screens
+            alignItems: "center",
+            gap: "2em",
+          }}
+        >
+          <Typography sx={navbarLinks} component={Link} to="/">
+            Home
+          </Typography>
+          <Typography sx={navbarLinks} component={Link} to="/tips">
+            Tips & Tricks
+          </Typography>
+          <Typography sx={navbarLinks} component={Link} to="/exercises">
+            Exercises
+          </Typography>
+          <Typography sx={navbarLinks} component={Link} to="/feedback">
+            Feedback
+          </Typography>
+        </Box>
+
+        {/* Hamburger Menu on Small Screens */}
+        <IconButton
+          edge="end"
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleDrawer}
+          sx={{ display: { xs: "block", md: "none" } }} // Hide on medium and larger screens
+        >
+          <Menu />
+        </IconButton>
+      </Toolbar>
+
+      {/* Drawer for Mobile */}
+      <Drawer
+        anchor="right"
+        open={isDrawerOpen}
+        onClose={toggleDrawer}
+        sx={{ display: { xs: "block", md: "none" } }} // Hide on medium and larger screens
+      >
+        <List onClick={toggleDrawer}>
+          <ListItem button component={Link} to="/">
+            <ListItemText primary="Home" />
+          </ListItem>
+          <ListItem button component={Link} to="/tips">
+            <ListItemText primary="Tips & Tricks" />
+          </ListItem>
+          <ListItem button component={Link} to="/exercises">
+            <ListItemText primary="Exercises" />
+          </ListItem>
+          <ListItem button component={Link} to="/feedback">
+            <ListItemText primary="Feedback" />
+          </ListItem>
+        </List>
+      </Drawer>
+    </AppBar>
+  );
+};
+
+export default Navbar;
