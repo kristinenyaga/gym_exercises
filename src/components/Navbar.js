@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Links on Larger Screens */}
         <Box
           sx={{
-            display: { xs: "none", md: "flex" }, // Hide on small screens, show on medium and larger screens
+            display: {  md: "flex" }, // Hide on small screens, show on medium and larger screens
             alignItems: "center",
             gap: "2em",
           }}
@@ -81,7 +81,7 @@ const Navbar = () => {
           <Typography sx={navbarLinks} component={Link} to="/">
             Home
           </Typography>
-          <Typography sx={navbarLinks} component={Link} to="/tips">
+          {/* <Typography sx={navbarLinks} component={Link} to="/tips">
             Tips & Tricks
           </Typography>
           <Typography sx={navbarLinks} component={Link} to="/exercises">
@@ -89,23 +89,14 @@ const Navbar = () => {
           </Typography>
           <Typography sx={navbarLinks} component={Link} to="/feedback">
             Feedback
-          </Typography>
+          </Typography> */}
         </Box>
 
-        {/* Hamburger Menu on Small Screens */}
-        <IconButton
-          edge="end"
-          color="inherit"
-          aria-label="menu"
-          onClick={toggleDrawer}
-          sx={{ display: { xs: "block", md: "none" } }} // Hide on medium and larger screens
-        >
-          <Menu />
-        </IconButton>
+
       </Toolbar>
 
       {/* Drawer for Mobile */}
-      <Drawer
+      {/* <Drawer
         anchor="right"
         open={isDrawerOpen}
         onClose={toggleDrawer}
@@ -125,7 +116,7 @@ const Navbar = () => {
             <ListItemText primary="Feedback" />
           </ListItem>
         </List>
-      </Drawer>
+      </Drawer> */}
     </AppBar>
   );
 };
