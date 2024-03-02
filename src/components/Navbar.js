@@ -59,7 +59,7 @@ const Navbar = () => {
           </Typography>
           <Typography
             sx={{
-              color: "#F86F03",
+              color: "#f59a2c",
               fontSize: "2.2em",
               letterSpacing: "0.03rem",
               fontWeight: "bold",

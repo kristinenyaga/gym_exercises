@@ -16,7 +16,7 @@ const ExerciseCard = ({exercise}) => {
       <Stack direction="row" sx={{ mt: "20px" }}>
         <Button
           sx={{
-            color: "#F86F03",
+            color: "#f59a2c",
             bgcolor: "white",
             fontSize: "14px",
             textTransform: "capitalize",
@@ -31,7 +31,7 @@ const ExerciseCard = ({exercise}) => {
         <Button
           sx={{
             color: "#fff",
-            bgcolor: "#F86F03",
+            bgcolor: "#f59a2c",
             fontSize: "14px",
             textTransform: "capitalize",
             borderRadius: "20px",

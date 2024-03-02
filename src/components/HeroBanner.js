@@ -92,7 +92,7 @@ const HeroBanner = () => {
             variant="h2"
             sx={{
               textAlign: "center",
-              color: "#F86F03",
+              color: "#f59a2c",
               fontSize: {
                 xs:'44px'
               }

@@ -19,7 +19,7 @@ const Footer = () => (
       mt="15px"
       textAlign="center"
       pb="40px"
-      color="#F86F03"
+      color="#f59a2c"
     >
       Made by Kristine Nyaga <br />
       (254) 7-344-120-54 <br />
